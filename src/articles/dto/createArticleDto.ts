@@ -1,4 +1,11 @@
+import { IsNotEmpty, IsString, } from "class-validator";
+
 export class CreateArticleDto {
-    name: string;
-    text: string;
+    @IsString()
+    @IsNotEmpty()
+    readonly articleName: string;
+
+    @IsString()
+    @IsNotEmpty()
+    readonly articleText: string;
 }
