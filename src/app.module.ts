@@ -17,10 +17,11 @@ import { CommentsModule } from './comments/comments.module';
     database: 'areal',
     models: [Article, Comment],
     autoLoadModels: true,
-    synchronize: true,
-    sync: { force: true }
+    synchronize: true
+    // sync: { force: true }
   }),
-    ArticlesModule, CommentsModule
+    ArticlesModule,
+    CommentsModule,
   ],
   controllers: [AppController],
   providers: [AppService],

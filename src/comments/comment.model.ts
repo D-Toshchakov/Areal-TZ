@@ -3,7 +3,7 @@ import { Article } from "../articles/article.model";
 
 interface CommentCreationAttrs {
     commentText: string;
-    articleId: string;
+    articleId: number;
 }
 
 @Table

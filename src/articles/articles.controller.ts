@@ -1,5 +1,4 @@
 import { Body, Controller, Delete, Get, HttpException, HttpStatus, Param, ParseIntPipe, Patch, Post, Res } from '@nestjs/common';
-import { response } from 'express';
 import { ArticlesService } from './articles.service';
 import { CreateArticleDto } from './dto/createArticleDto';
 import { EditArticleDto } from './dto/editArticleDto';
@@ -38,7 +37,6 @@ export class ArticlesController {
     @Patch(":id")
     async EditArticle(@Res() response, @Param("id", ParseIntPipe) id: number, @Body() dto: EditArticleDto) {
         const [rowsAffected] = await this.articleService.editArticleById(id, dto)
-        console.log(rowsAffected);
         if (!rowsAffected) {
             throw new HttpException('article not found', HttpStatus.NOT_FOUND)
         }
