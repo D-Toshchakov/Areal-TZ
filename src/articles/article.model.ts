@@ -1,4 +1,5 @@
-import { Table, Column, Model, CreatedAt, UpdatedAt, DataType } from "sequelize-typescript";
+import { Table, Column, Model, CreatedAt, UpdatedAt, DataType, HasMany } from "sequelize-typescript";
+import { Comment } from "../comments/comment.model";
 
 interface ArticleCreationAttrs {
     articleName: string;
@@ -23,4 +24,7 @@ export class Article extends Model<Article, ArticleCreationAttrs> {
     @UpdatedAt
     @Column
     updatedAt: Date;
+
+    @HasMany(() => Comment)
+    comments: Comment[];
 }
