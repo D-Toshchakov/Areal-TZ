@@ -11,7 +11,7 @@
     "sequelize:seed": "npx sequelize-cli db:seed:all",
     "db:dev:rm": "docker compose rm db -s -f -v",
     "db:dev:up": "docker compose up db -d",
-    "db:dev:restart": "npm run db:dev:rm && npm run db:dev:up && sleep 1 && npm run sequelize:migrate:up && sleep 1 && npm run sequelize:seed",
+    "db:dev:restart": "npm run db:dev:rm && npm run db:dev:up && sleep 1 && npm run sequelize:migrate:up",
     "prebuild": "rimraf dist",
     "build": "nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",

@@ -6,6 +6,7 @@ import { Article } from './articles/article.model';
 import { ArticlesModule } from './articles/articles.module';
 import { Comment } from './comments/comment.model';
 import { CommentsModule } from './comments/comments.module';
+import { AnalyticsModule } from './analytics/analytics.module';
 
 @Module({
   imports: [SequelizeModule.forRoot({
@@ -17,11 +18,10 @@ import { CommentsModule } from './comments/comments.module';
     database: 'areal',
     models: [Article, Comment],
     autoLoadModels: true,
-    synchronize: true
-    // sync: { force: true }
   }),
     ArticlesModule,
     CommentsModule,
+    AnalyticsModule,
   ],
   controllers: [AppController],
   providers: [AppService],
